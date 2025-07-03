@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE GENERATOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo_black_.png">
+</head>
+<body>
+    <div class="body">
+        <div class="container">
+            <div class="header">
+                <h1 class="h1">QR Code Generator</h1>
+                <p class="p">Thank You For Choosing Us,...</p>
+            </div>
+            <div class="input">
+                <div class="input1">
+                    <h1>QR Code Generator</h1><br>
+                    <div class="input11">
+                        <h3>Enter Your Url : </h3>
+                        <input type="text" id="input" placeholder="Enter Text or URL"><br>
+                        <button onclick="generateQrCode()">Generate</button>
+                    </div>
+                </div>
+            </div>
+            <div class="output">
+                <div class="output1">
+                    <h1>Code</h1>
+                    <div id="qrcode"></div>
+                    <h3 id="link"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        function generateQrCode() {
+            const text = document.getElementById("input").value;
+            const qrcodecontainer = document.getElementById("qrcode");
+
+            qrcodecontainer.innerHTML = "";
+
+            new QRCode(qrcodecontainer, {
+                text: text,
+                width: 120,
+                height: 120,
+            });
+        }
+        
+    </script>
+</body>
+</html>
