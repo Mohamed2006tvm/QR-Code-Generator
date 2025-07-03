@@ -92,8 +92,9 @@ body {
 }
 
 #qrcode {
-    margin-left:  3rem;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .h1 {
